@@ -157,7 +157,7 @@ def paginate_requests(
 
 
 @task
-def get_request(url, headers):
+def get_request(url: str, headers: dict) -> requests.Response:
     """
     Task wrapper for requests.get()
     """
