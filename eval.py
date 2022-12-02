@@ -172,7 +172,7 @@ def write_json(data: list[dict], filename: str):
     with open(f"{filename}.json", "w", encoding="utf-8") as file:
         for item in data:
             # + and - aren't valid symbols for field names in Bigquery
-            if filename == "issues":
+            if filename.split("/")[1] == "issues":
                 item["reactions"]["minus_1"] = item["reactions"].pop("-1")
                 item["reactions"]["plus_1"] = item["reactions"].pop("+1")
 
